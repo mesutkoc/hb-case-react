@@ -43,6 +43,9 @@
   justify-content: center;
   align-items: center;
 }
+.headerBottomElements .sortingButton:hover{
+  cursor:pointer;
+}
 .headerBottomElements .sortingButton .vector {
   margin-left: 20px;
 }
@@ -66,4 +69,5 @@
 }
 .headerBottomSorting .sortingList .listItem:hover{
   background-color: blue;
+  cursor:pointer;
 }

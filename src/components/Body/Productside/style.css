@@ -1,0 +1,113 @@
+.itemSide {
+  width: 1258px;
+}
+.itemSide .items {
+  display: flex;
+  flex-flow: row wrap;
+}
+.items .item {
+  width: 254px;
+  height: 472px;
+  padding-left: 10px;
+}
+.item .itemImageDiv {
+  width: 254px;
+  height: 339px;
+  background-color: #ffffff;
+  border: 1px solid#E5E5E5;
+  border-radius: 10px;
+}
+.itemImageDiv .itemImage {
+  width: 224px;
+  height: 332px;
+  padding: 3px 15px 4px 15px;
+}
+.item .itemDetail .itemDetailDescription {
+  overflow: hidden;
+  margin: 13px 22px 10px 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+}
+.item .itemDetail .brandDetail {
+  display: flex;
+  flex-direction: column;
+}
+.item .brandDetail .itemBrand {
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+  font-weight: bold;
+}
+.item .brandDetail .itemColor {
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+  font-weight: bold;
+}
+.item .brandDetail .itemModelDetail {
+  font-weight: normal !important;
+  padding: 0 3px !important;
+}
+.item  .priceDetail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+}
+.item .priceDetail .itemPrice {
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+  font-weight: bold;
+}
+.item .priceDetail .itemDiscount {
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #484848;
+}
+.item .priceDetail .itemDiscountDetail {
+  color: red;
+  font-weight: bold;
+  padding-left: 5px;
+}
+.item .addButton {
+  background-color: rgba(243, 128, 5, 0.152);
+  color: rgb(255, 132, 0);;
+  font-weight: bold;
+  margin-left: 10px;
+  height: 35px;
+  width: 224px;
+  border-radius: 10px;
+  border:none; 
+  
+}
+.item .addButton:hover{
+    cursor:pointer;
+}
+.item .addBasketButton{
+  position: relative;
+  top:30px;
+}
+@media screen and (max-width: 1300px) {
+  .items .item {
+    width: 234px;
+    height: 472px;
+    padding-left: 10px;
+  }
+  .item .itemImageDiv {
+    width: 234px;
+    height: 303px;
+    background-color: #ffffff;
+    border: 1px solid#E5E5E5;
+    border-radius: 10px;
+  }
+  .itemImageDiv .itemImage {
+    width: 200px;
+    height: 300px;
+    padding: 3px 15px 4px 15px;
+  }
+}

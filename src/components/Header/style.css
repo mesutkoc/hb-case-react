@@ -29,7 +29,6 @@
 .headerElements .basket {
   margin-left: 156px;
 }
-
 .headerElements .basket .basketInput {
   background-color: #ffffff;
   float: right;
@@ -38,6 +37,9 @@
   border-radius: 4px;
   border: 1px solid #b0b0b0;
   color: #b0b0b0;
+}
+.headerElements .basketInput:hover {
+  cursor: pointer;
 }
 .headerElements .basket .basketInput .basketCount {
   position: absolute;
