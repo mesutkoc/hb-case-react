@@ -8,7 +8,6 @@
 .items .item {
   width: 254px;
   height: 472px;
-  padding-left: 10px;
 }
 .item .itemImageDiv {
   width: 254px;
@@ -28,10 +27,15 @@
   font-size: 12px;
   line-height: 18px;
   color: #484848;
+  --lh: 1rem;
+  line-height: var(--lh);
+  --max-lines: 2;
+  height: calc(var(--lh) * var(--max-lines));
 }
 .item .itemDetail .brandDetail {
   display: flex;
   flex-direction: column;
+
 }
 .item .brandDetail .itemBrand {
   padding: 0 16px;
@@ -51,10 +55,11 @@
   font-weight: normal !important;
   padding: 0 3px !important;
 }
-.item  .priceDetail {
+.item .priceDetail {
   display: flex;
   flex-direction: column;
   margin-top: 3px;
+  min-height: 40px;
 }
 .item .priceDetail .itemPrice {
   padding: 0 16px;
@@ -63,51 +68,72 @@
   color: #484848;
   font-weight: bold;
 }
+.item .priceDetail .discount{
+  display: flex;
+  flex-direction: row;
+}
 .item .priceDetail .itemDiscount {
   padding: 0 16px;
   font-size: 12px;
   line-height: 18px;
   color: #484848;
+  text-decoration: line-through;
 }
 .item .priceDetail .itemDiscountDetail {
+  font-size: 12px;
+  line-height: 18px;
   color: red;
   font-weight: bold;
-  padding-left: 5px;
+  margin-left: -4px;
 }
 .item .addButton {
   background-color: rgba(243, 128, 5, 0.152);
-  color: rgb(255, 132, 0);;
+  color: rgb(255, 132, 0);
   font-weight: bold;
   margin-left: 10px;
   height: 35px;
   width: 224px;
   border-radius: 10px;
-  border:none; 
-  
+  border: none;
 }
-.item .addButton:hover{
-    cursor:pointer;
+.item .addButton:hover {
+  cursor: pointer;
 }
-.item .addBasketButton{
+.item .addBasketButton {
   position: relative;
-  top:30px;
+  top: 30px;
 }
+
+
 @media screen and (max-width: 1300px) {
   .items .item {
-    width: 234px;
+    width: 210px;
     height: 472px;
-    padding-left: 10px;
   }
   .item .itemImageDiv {
-    width: 234px;
-    height: 303px;
+    width: 200px;
+    height: 300px;
     background-color: #ffffff;
     border: 1px solid#E5E5E5;
     border-radius: 10px;
   }
   .itemImageDiv .itemImage {
-    width: 200px;
-    height: 300px;
-    padding: 3px 15px 4px 15px;
+    width: 180px;
+    height: 290px;
+    padding: 3px 8px 4px 8px;
+  }
+  .item .itemDetail .itemDetailDescription {
+    overflow: hidden;
+    margin: 13px 22px 10px 16px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #484848;
+    --lh: 1.4rem;
+    line-height: var(--lh);
+    --max-lines: 2;
+    max-height: calc(var(--lh) * var(--max-lines));
+  }
+  .item .addButton {
+    width: 180px;
   }
 }

@@ -2,11 +2,8 @@ import React from "react";
 import "./style.css"
 import Logo from "../../assets/hepsiburadalogo.png";
 import Searchicon from "../../assets/searchicon.png";
-import { useSelector } from "react-redux";
 
 function Header() {
-  const list = useSelector((state) => state.products.productsData);
-  console.log(list);
   return (
     <div className="headerContainer">
       <div className="headerElements">

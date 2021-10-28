@@ -1,7 +1,6 @@
 .filterSide {
-  width: 20%;
+  width: 205px;
   min-width: 203px;
-  background-color: pink;
 }
 .filterSide .colorList {
   list-style: none;
