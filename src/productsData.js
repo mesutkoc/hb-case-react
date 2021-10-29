@@ -1,7 +1,7 @@
 const productsData = [
   {
     id: 1000,
-    brand: "Apple",
+    brand: "Xiaomi",
     model: "Iphone 11",
     price: "13000",
     discount: "10",
@@ -10,7 +10,7 @@ const productsData = [
   },
   {
     id: 1001,
-    brand: "Apple",
+    brand: "Samsung",
     model: "Iphone 12",
     price: "16000",
     discount: "14",
@@ -28,7 +28,7 @@ const productsData = [
   },
   {
     id: 1003,
-    brand: "Apple",
+    brand: "LG",
     model: "Iphone 11",
     price: "11000",
     discount: "8",
@@ -37,7 +37,7 @@ const productsData = [
   },
   {
     id: 1004,
-    brand: "Apple",
+    brand: "Xiaomi",
     model: "Iphone 11",
     price: "13000",
     discount: "10",

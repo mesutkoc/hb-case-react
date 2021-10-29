@@ -1,5 +1,7 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
+import Brand from "./Brand";
+
 function Filterside() {
   return (
     <div className="filterSide">
@@ -29,32 +31,7 @@ function Filterside() {
           <li className="filterItem">En Yeniler (Z{">"}A)</li>
         </ul>
       </div>
-      <div className="brandFilter">
-        <span className="filterHeader">Marka</span>
-        <ul className="colorList">
-          <li className="filterItem">
-            Samsung <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Apple <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            LG <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Xiaomi <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Huawei <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            General Mobile <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Nokia <span className="countSpan">(5)</span>
-          </li>
-        </ul>
-      </div>
+      <Brand></Brand>
     </div>
   );
 }
