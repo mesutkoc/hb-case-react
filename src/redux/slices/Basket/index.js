@@ -7,12 +7,16 @@ export const basketSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.userBasket=[...state.userBasket,action.payload]
+      state.userBasket = [...state.userBasket, action.payload];
+      localStorage.setItem("basket", JSON.stringify(state.userBasket));
     },
     deleteItem: (state, action) => {
-    const userBasket=  state.userBasket.filter(item => item.id !== action.payload.id);
+      const userBasket = state.userBasket.filter(
+        (item) => item.id !== action.payload.id
+      );
       state.userBasket = userBasket;
-    }
+      localStorage.setItem("basket", JSON.stringify(state.userBasket));
+    },
   },
 });
 
