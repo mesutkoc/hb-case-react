@@ -1,17 +1,26 @@
 import React from "react";
 import "./style.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentPage } from "redux/slices/Products/";
+import {
+  setCurrentPage,
+  setFiltersData,
+} from "redux/slices/Products/";
 
 import ProductComponent from "./ProductComponent";
 
 function Productside() {
   const dispatch = useDispatch();
   let product = useSelector((state) => state.products.productsData);
-  const searchedProduct = useSelector((state) => state.filters.searchedData);
+  const searchedProduct = useSelector((state) => state.products.searchedData);
   if (searchedProduct.length >= 2) {
-    const result = product.filter(item =>item.model.includes(searchedProduct)); 
+    const result = product.filter((item) =>
+      item.model.includes(searchedProduct)
+    );
     product = result;
+    dispatch(setFiltersData(product));
+  }
+  else {
+    dispatch(setFiltersData(product))
   }
 
   const currentPage = useSelector((state) => state.products.currentPage);
@@ -29,20 +38,18 @@ function Productside() {
     pageNumbers.push(i);
   }
   const changePage = (data) => {
-    dispatch(setCurrentPage(data))
-  }
+    dispatch(setCurrentPage(data));
+  };
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
-      <div key={number} id={number} onClick={(e)=>changePage(e.target.id)}>
+      <div key={number} id={number} onClick={(e) => changePage(e.target.id)}>
         {number}
       </div>
     );
   });
   return (
     <div className="itemSide">
-      <div className="items">
-        {renderProducts}
-      </div>
+      <div className="items">{renderProducts}</div>
       {renderPageNumbers}
     </div>
   );

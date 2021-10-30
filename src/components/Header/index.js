@@ -3,7 +3,7 @@ import "./style.css"
 import Logo from "../../assets/hepsiburadalogo.png";
 import Searchicon from "../../assets/searchicon.png";
 import { useDispatch } from "react-redux";
-import { setSearchedData } from "../../redux/slices/Filters/index";
+import { setSearchedData } from "../../redux/slices/Products/index";
 
 function Header() {
   const dispatch = useDispatch();

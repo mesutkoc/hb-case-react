@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function Brand() {
-  const filter = useSelector((state) => state.filters.defaultFiltersData);
+  const filter = useSelector((state) => state.products.defaultFiltersData);
   return (
     <div className="brandFilter">
       <span className="filterHeader">Marka</span>
