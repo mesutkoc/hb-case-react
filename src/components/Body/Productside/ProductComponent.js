@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./style.css";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../redux/slices/Basket";
+
 import Image1 from "../../../assets/image1.png";
 // import Image2 from "../../../assets/image2.png";
 // import Image3 from "../../../assets/image3.png";
 // import Image4 from "../../../assets/image4.png";
 
 function ProductComponent(item) {
+  const dispatch = useDispatch();
   const [hover, setHover] = useState({ id: null, hovers: null });
   const calculateDiscount = (price, discount) => {
     const discountCash = (parseInt(price) * parseInt(discount)) / 100;
@@ -18,6 +22,9 @@ function ProductComponent(item) {
   const onMouseLeaveHandler = () => {
     setHover({});
   };
+  const addItemToBasket = (item) => {
+    dispatch(addItem(item));
+  }
   return (
     <div>
       <div
@@ -55,12 +62,10 @@ function ProductComponent(item) {
               {parseInt(item.props.discount) !== 0 && (
                 <span className="discount">
                   <span className="itemDiscount">
-                    {
-                      calculateDiscount(
-                        item.props.price,
-                        item.props.discount
-                      )[1] + " TL"
-                    }
+                    {calculateDiscount(
+                      item.props.price,
+                      item.props.discount
+                    )[1] + " TL"}
                   </span>
                   <span className="itemDiscountDetail">
                     {parseInt(item.props.discount) !== 0 &&
@@ -75,7 +80,10 @@ function ProductComponent(item) {
               hover.id === item.props.id && hover.hovers
             }`}
           >
-            <button className="addButton" onClick={() => console.log("done")}>
+            <button
+              className="addButton"
+              onClick={() => addItemToBasket(item.props)}
+            >
               Sepete Ekle
             </button>
           </div>

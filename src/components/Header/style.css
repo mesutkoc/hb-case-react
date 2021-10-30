@@ -29,6 +29,58 @@
 .headerElements .basket {
   margin-left: 156px;
 }
+.headerContainer .userBasket {
+  position: absolute;
+  background-color: #FFFFFF;
+  width: 360px;
+  height: 200px;
+  top: 75px;
+  right: 80px;
+  border:1px solid #B0B0B0;
+  border-radius: 4px;
+  display: none;
+  overflow-y: auto;
+}
+.headerContainer .basketItem{
+  display: flex;
+  flex-direction: row;
+  margin: 28px;
+}
+.headerContainer .basketItemDescription{
+  color:#484848;
+  font-size: 12px;
+  height: 20px;
+  background-color: red;
+}
+.headerContainer .basketItemRemoveButton{
+  margin-top:15px ;
+  background-color: white;
+  color:#F90000;
+  border: 1px solid #F90000;
+  border-radius: 4px;
+}
+.headerContainer .basketImageDiv{
+  width: 54px;
+  height: 72px;
+}
+.headerContainer .basketImage{
+  width: 40px;
+  height: 60px;
+}
+.headerContainer .userBasket.true {
+  display: block;
+}
+.headerContainer .emptyCart{
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  text-align: center;  
+}
+.headerContainer .cartImage{
+  width: 30px;
+  height: 30px;
+}
+
 .headerElements .basket .basketInput {
   background-color: #ffffff;
   float: right;
