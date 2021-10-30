@@ -1,4 +1,4 @@
-import { getFilters, getColorFilters } from "./index";
+import { getFilters, getColorFilters,setProducts } from "./index";
 describe("Test", () => {
   test("Return counts that is same brand", () => {
     const datas = [
@@ -24,4 +24,12 @@ describe("Test", () => {
       { color: "Kırmızı", count: 1 },
     ]);
   });
+  test("Return datas", () => {
+    const datas = [{ brand: "Apple", color: "Sarı" }, { brand: "Samsung", color: "Siyah" }]
+    console.log(datas)
+    expect(setProducts(datas)).toEqual([
+      { brand: "Apple", color: "Sarı" },
+      { brand: "Samsung", color: "Siyah" },
+    ]);
+  })
 });

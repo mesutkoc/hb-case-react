@@ -28,7 +28,7 @@ function Productside() {
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastProduct);
-  const renderProducts = currentProduct.map((product, index) => {
+  const renderProducts = currentProduct.map((product) => {
     return (
       <ProductComponent props={product} key={product.id}></ProductComponent>
     );

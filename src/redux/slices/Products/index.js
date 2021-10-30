@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export const setProducts = (data) => {
+  return data;
+};
 export const getFilters = (data) => {
   const brandList = [];
   if (data) {
@@ -26,7 +29,7 @@ export const getColorFilters = (data) => {
 export const productSlice = createSlice({
   name: "products",
   initialState: {
-    productsData: JSON.parse(localStorage.getItem("productList")),
+    productsData: setProducts(JSON.parse(localStorage.getItem("productList"))),
     currentPage: 1,
     productPerPage: 12,
     defaultFiltersData: getFilters(
@@ -49,8 +52,9 @@ export const productSlice = createSlice({
       state.defaultFiltersData = getFilters(action.payload);
       state.defaultColorsData = getColorFilters(action.payload);
     },
+
   },
 });
-export const { setCurrentPage, setSearchedData, setFiltersData } =
+export const { setCurrentPage, setSearchedData, setFiltersData, setProductsData } =
   productSlice.actions;
 export default productSlice.reducer;
