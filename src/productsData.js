@@ -29,7 +29,7 @@ const productsData = [
   {
     id: 1003,
     brand: "LG",
-    model: "Iphone 11",
+    model: "LG Ultra",
     price: "11000",
     discount: "8",
     color: "Siyah",
@@ -56,7 +56,7 @@ const productsData = [
   {
     id: 1006,
     brand: "Xiaomi",
-    model: "Iphone 11",
+    model: "Xiaomi Mi 10",
     price: "13000",
     discount: "10",
     color: "Siyah",
@@ -65,7 +65,7 @@ const productsData = [
   {
     id: 1007,
     brand: "Samsung",
-    model: "Iphone 12",
+    model: "Samsung S20",
     price: "16000",
     discount: "14",
     color: "Sarı",

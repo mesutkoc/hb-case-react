@@ -2,8 +2,15 @@ import React from "react";
 import "./style.css"
 import Logo from "../../assets/hepsiburadalogo.png";
 import Searchicon from "../../assets/searchicon.png";
+import { useDispatch } from "react-redux";
+import { setSearchedData } from "../../redux/slices/Filters/index";
 
 function Header() {
+  const dispatch = useDispatch();
+  
+  const searchProduct = (searchItem) => {
+    dispatch(setSearchedData(searchItem.trim()));
+  }
   return (
     <div className="headerContainer">
       <div className="headerElements">
@@ -17,6 +24,7 @@ function Header() {
             id="fname"
             className="searchInput"
             placeholder="25 milyon'dan fazla ürün içerisinde ara"
+            onChange={(e)=>searchProduct(e.target.value)}
           ></input>
         </div>
         <div className="basket">

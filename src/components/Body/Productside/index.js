@@ -2,14 +2,20 @@ import React from "react";
 import "./style.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentPage } from "redux/slices/Products/";
+
 import ProductComponent from "./ProductComponent";
 
 function Productside() {
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.products.productsData);
+  let product = useSelector((state) => state.products.productsData);
+  const searchedProduct = useSelector((state) => state.filters.searchedData);
+  if (searchedProduct.length >= 2) {
+    const result = product.filter(item =>item.model.includes(searchedProduct)); 
+    product = result;
+  }
+
   const currentPage = useSelector((state) => state.products.currentPage);
   const productPerPage = useSelector((state) => state.products.productPerPage);
-
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastProduct);

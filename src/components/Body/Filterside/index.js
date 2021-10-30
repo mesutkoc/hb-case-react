@@ -1,27 +1,12 @@
 import React from "react";
 import "./style.css";
 import Brand from "./Brand";
+import Color from "./Color"
 
 function Filterside() {
   return (
     <div className="filterSide">
-      <div className="colorFilter">
-        <span className="filterHeader">Renk</span>
-        <ul className="colorList">
-          <li className="filterItem">
-            Pembe <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Siyah <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Beyaz <span className="countSpan">(5)</span>
-          </li>
-          <li className="filterItem">
-            Kırmızı <span className="countSpan">(5)</span>
-          </li>
-        </ul>
-      </div>
+      <Color></Color>
       <div className="sorting">
         <span className="filterHeader">Sıralama</span>
         <ul className="colorList">
