@@ -39,22 +39,37 @@ export const productSlice = createSlice({
       JSON.parse(localStorage.getItem("productList"))
     ),
     searchedData: "",
+    usersFilterList: "",
+    usersBrandFilter: "",
   },
   reducers: {
     setCurrentPage: (state, action) => {
-      console.log(action.payload);
       state.currentPage = action.payload;
     },
     setSearchedData: (state, action) => {
       state.searchedData = action.payload;
     },
-    setFiltersData: (state, action) => {
-      state.defaultFiltersData = getFilters(action.payload);
-      state.defaultColorsData = getColorFilters(action.payload);
+    setUsersFilterList: (state, action) => {
+      if (state.usersFilterList !== action.payload) {
+        state.usersFilterList = action.payload;
+      } else {
+        state.usersFilterList = "";
+      }
     },
-
+    setUsersBrandFilter: (state, action) => {
+      if (state.usersBrandFilter !== action.payload) {
+        state.usersBrandFilter = action.payload;
+      } else {
+        state.usersBrandFilter = "";
+      }
+    },
   },
 });
-export const { setCurrentPage, setSearchedData, setFiltersData, setProductsData } =
-  productSlice.actions;
+export const {
+  setCurrentPage,
+  setSearchedData,
+  setProductsData,
+  setUsersFilterList,
+  setUsersBrandFilter,
+} = productSlice.actions;
 export default productSlice.reducer;

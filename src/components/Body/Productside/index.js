@@ -1,28 +1,37 @@
-import React from "react";
+import React,{useState} from "react";
 import "./style.css";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  setCurrentPage,
-  setFiltersData,
-} from "redux/slices/Products/";
-
+import { setCurrentPage } from "redux/slices/Products/";
 import ProductComponent from "./ProductComponent";
 
 function Productside() {
   const dispatch = useDispatch();
   let product = useSelector((state) => state.products.productsData);
+  let userColorFilter = useSelector((state) => state.products.usersFilterList);
+  const [hover, setHover] = useState({ index: null, hovers: null });
+
+  let userBrandFilter = useSelector((state) => state.products.usersBrandFilter);
+
+  if (userColorFilter && userBrandFilter) {
+    let colorFilter = product.filter(
+      (item) => item.color === userColorFilter && item.brand === userBrandFilter
+    );
+    product = colorFilter;
+  } else if (userBrandFilter) {
+    let colorFilter = product.filter((item) => item.brand === userBrandFilter);
+    product = colorFilter;
+  } else if (userColorFilter) {
+    let colorFilter = product.filter((item) => item.color === userColorFilter);
+    product = colorFilter;
+  }
   const searchedProduct = useSelector((state) => state.products.searchedData);
   if (searchedProduct.length >= 2) {
     const result = product.filter((item) =>
       item.model.includes(searchedProduct)
     );
     product = result;
-    dispatch(setFiltersData(product));
   }
-  else {
-    dispatch(setFiltersData(product))
-  }
-
+  
   const currentPage = useSelector((state) => state.products.currentPage);
   const productPerPage = useSelector((state) => state.products.productPerPage);
   const indexOfLastProduct = currentPage * productPerPage;
@@ -30,19 +39,28 @@ function Productside() {
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastProduct);
   const renderProducts = currentProduct.map((product) => {
     return (
-      <ProductComponent props={product} key={product.id}></ProductComponent>
+      <ProductComponent
+        props={product}
+        key={product.id}
+      ></ProductComponent>
     );
   });
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(product.length / productPerPage); i++) {
     pageNumbers.push(i);
   }
-  const changePage = (data) => {
+  const changePage = (data,id) => {
     dispatch(setCurrentPage(data));
+    id !== hover.index ? setHover({ index: id, hovers: true }) : setHover({});
   };
-  const renderPageNumbers = pageNumbers.map((number) => {
+  const renderPageNumbers = pageNumbers.map((number,index) => {
     return (
-      <div key={number} id={number} onClick={(e) => changePage(e.target.id)}>
+      <div
+        className={`pageNumber ${hover.index === index && hover.hovers}`}
+        key={number}
+        id={number}
+        onClick={(e) => changePage(e.target.id,index)}
+      >
         {number}
       </div>
     );
@@ -50,7 +68,7 @@ function Productside() {
   return (
     <div className="itemSide">
       <div className="items">{renderProducts}</div>
-      {renderPageNumbers}
+      <div className="pageNumbers">{renderPageNumbers}</div>
     </div>
   );
 }
