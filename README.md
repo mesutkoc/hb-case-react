@@ -25,6 +25,9 @@ To run project.
 
 `npm run start`
 
+To run tests.
+
+`npm run test`
 # Docker 
 
 Project can build and running in Docker Container.
