@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   setUsersBrandFilter,
   setCurrentPage,
+  setSearchedData,
 } from "../../../redux/slices/Products";
 
 
@@ -13,6 +14,7 @@ function Brand() {
   const [hover, setHover] = useState({ index: null, hovers: null });
   const setFilterWithBrand = (brand, id) => {
     dispatch(setUsersBrandFilter(brand));
+    dispatch(setSearchedData(""));
     dispatch(setCurrentPage(1));
     id !== hover.index ? setHover({ index: id, hovers: true }) : setHover({});
   };

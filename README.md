@@ -5,7 +5,7 @@
 
 This case is about basic E-commerce site that contains some filters as brand, colors, price or created date of product.
 User can select product brand or color in filter side of application, then selected group of products shown in page.
-If user selecte brand or color, filter side updated with products counts that have these properties.
+If user select brand or color, filter side updated with products counts that have these properties.
 If user select two filter items as brand and color, the products that contains these properties shown in page.
 If user search model of products, related items shown in page.
 If user add same item in basket, this item add button shown as disable.
