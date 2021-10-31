@@ -3,13 +3,17 @@ import Image from "../../assets/image1.png";
 import Cart from "../../assets/cart.png";
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteItem } from "redux/slices/Basket";
+import {
+  setModalStatus,
+  setDeletedItem,
+} from "redux/slices/Basket";
 
 function Basket(hover) {
   const basketItems = useSelector((state) => state.basket.userBasket);
   const dispatch = useDispatch();
   const removeItem = (item) => {
-    dispatch(deleteItem(item));
+    dispatch(setDeletedItem(item));
+    dispatch(setModalStatus(true));
   };
   return (
     <div className={`userBasket ${hover.props}`}>

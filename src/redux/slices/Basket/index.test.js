@@ -1,4 +1,4 @@
-import reducer, { removeItem, addItemToBasket } from "./index";
+import { removeItem, addItemToBasket } from "./index";
 
 describe("Return basket after added/removed item", () => {
   test("Return current basket", () => {
@@ -33,4 +33,5 @@ describe("Return basket after added/removed item", () => {
       { brand: "Apple", model: "Iphone 11", id: 3 },
     ]);
   });
+
 });

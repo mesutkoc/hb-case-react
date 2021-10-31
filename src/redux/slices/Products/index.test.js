@@ -1,4 +1,4 @@
-import reducer, {
+import {
   getFilters,
   getColorFilters,
   setProducts,

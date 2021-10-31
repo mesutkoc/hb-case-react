@@ -5,9 +5,13 @@ import { addItem } from "../../../redux/slices/Basket";
 import { calculateDiscount } from "components/functions";
 
 import Image1 from "../../../assets/image1.png";
-// import Image2 from "../../../assets/image2.png";
-// import Image3 from "../../../assets/image3.png";
-// import Image4 from "../../../assets/image4.png";
+import Image2 from "../../../assets/image2.png";
+import Image3 from "../../../assets/image3.png";
+import Image4 from "../../../assets/image4.png";
+import Image5 from "../../../assets/xiaomi.png";
+import Image6 from "../../../assets/samsung.png";
+import Image7 from "../../../assets/huawei.png";
+import Image8 from "../../../assets/huawei2.png";
 
 function ProductComponent(item) {
   const dispatch = useDispatch();
@@ -22,6 +26,8 @@ function ProductComponent(item) {
   const addItemToBasket = (item) => {
     dispatch(addItem(item));
   };
+  const androidArray = [Image5, Image6, Image7, Image8];
+  const iosArray = [Image1,Image2,Image3,Image4]
   return (
     <div>
       <div
@@ -35,7 +41,15 @@ function ProductComponent(item) {
             hover.id === item.props.id && hover.hovers
           }`}
         >
-          <img src={Image1} alt="item1" className="itemImage"></img>
+          <img
+            src={
+              item.props.brand === "Apple"
+                ? iosArray[Math.floor(Math.random() * androidArray.length)]
+                : androidArray[Math.floor(Math.random() * androidArray.length)]
+            }
+            alt="item1"
+            className="itemImage"
+          ></img>
         </div>
         <div className="itemDetail">
           <p className="itemDetailDescription">{item.props.description}</p>
@@ -80,7 +94,9 @@ function ProductComponent(item) {
             {basketData.length > 0 ? (
               basketData.findIndex((product) => product.id === item.props.id) >=
               0 ? (
-                <button className="cantAddButton">Bu ürünü sepete ekleyemezsiniz.</button>
+                <button className="cantAddButton">
+                  Bu ürünü sepete ekleyemezsiniz.
+                </button>
               ) : (
                 <button
                   className="addButton"
