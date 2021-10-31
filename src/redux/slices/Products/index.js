@@ -29,6 +29,10 @@ export const getSortingFilter = (data, type) => {
   data = type;
   return data;
 };
+export const getCurrentPage = (data, type) => {
+  data = type;
+  return data;
+};
 export const productSlice = createSlice({
   name: "products",
   initialState: {
@@ -48,7 +52,7 @@ export const productSlice = createSlice({
   },
   reducers: {
     setCurrentPage: (state, action) => {
-      state.currentPage = action.payload;
+      state.currentPage = getCurrentPage(state.currentPage,action.payload);
     },
     setDefaultFilter: (state, action) => {
       state.defaultColorsData = getColorFilters(action.payload);

@@ -1,4 +1,10 @@
-import reducer, { getFilters, getColorFilters, setProducts } from "./index";
+import reducer, {
+  getFilters,
+  getColorFilters,
+  setProducts,
+  getCurrentPage,
+  getSortingFilter,
+} from "./index";
 
 
 describe("Test", () => {
@@ -36,5 +42,12 @@ describe("Test", () => {
       { brand: "Samsung", color: "Siyah" },
     ]);
   });
- 
+  test("Return sorting", () => {
+    const datas = "New";
+    expect(getSortingFilter(datas,"New")).toEqual("New");
+  });
+  test("Return page", () => {
+    const datas = "1";
+    expect(getCurrentPage(datas, "1")).toEqual("1");
+  });
 });

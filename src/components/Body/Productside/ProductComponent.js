@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../../redux/slices/Basket";
+import { calculateDiscount } from "components/functions";
 
 import Image1 from "../../../assets/image1.png";
 // import Image2 from "../../../assets/image2.png";
@@ -12,11 +13,6 @@ function ProductComponent(item) {
   const dispatch = useDispatch();
   const basketData = useSelector((state) => state.basket.userBasket);
   const [hover, setHover] = useState({ id: null, hovers: null });
-  const calculateDiscount = (price, discount) => {
-    const discountCash = (parseInt(price) * parseInt(discount)) / 100;
-    const newPrice = price - discountCash;
-    return [newPrice, discountCash];
-  };
   const onMouseEnterHandler = (id) => {
     setHover({ id: id, hovers: true });
   };
