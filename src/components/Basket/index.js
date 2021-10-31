@@ -3,7 +3,7 @@ import Image from "../../assets/image1.png";
 import Cart from "../../assets/cart.png";
 
 import { useSelector, useDispatch } from "react-redux";
-import { basketSlice, deleteItem } from "redux/slices/Basket";
+import { deleteItem } from "redux/slices/Basket";
 
 function Basket(hover) {
   const basketItems = useSelector((state) => state.basket.userBasket);
