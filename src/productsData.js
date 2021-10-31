@@ -7,6 +7,7 @@ const productsData = [
     discount: "10",
     color: "Siyah",
     description: "Apple Iphone 11 Pro 128 GB Parlak Siyah ",
+    createdDate: "2020-01-13",
   },
   {
     id: 1001,
@@ -16,6 +17,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "Apple Iphone 12 Pro Max 64 GB Sarı",
+    createdDate: "2020-01-15",
   },
   {
     id: 1002,
@@ -25,6 +27,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Apple Iphone X  64 GB Kırmızı",
+    createdDate: "2020-02-13",
   },
   {
     id: 1003,
@@ -34,6 +37,7 @@ const productsData = [
     discount: "8",
     color: "Siyah",
     description: "Apple Iphone 12 128 GB Siyah",
+    createdDate: "2020-02-16",
   },
   {
     id: 1004,
@@ -43,6 +47,7 @@ const productsData = [
     discount: "10",
     color: "Sarı",
     description: "Apple Iphone 11 Pro Max Sarı",
+    createdDate: "2020-02-17",
   },
   {
     id: 1005,
@@ -52,6 +57,7 @@ const productsData = [
     discount: "5",
     color: "Beyaz",
     description: "Apple Iphone 11 Pro Max Beyaz",
+    createdDate: "2020-05-10",
   },
   {
     id: 1006,
@@ -61,6 +67,7 @@ const productsData = [
     discount: "10",
     color: "Siyah",
     description: "Apple Iphone XS 128 GB Siyah",
+    createdDate: "2020-05-14",
   },
   {
     id: 1007,
@@ -70,6 +77,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "Apple Iphone 12 Pro Max Sarı 256 GB",
+    createdDate: "2020-05-15",
   },
   {
     id: 1008,
@@ -79,6 +87,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Apple Iphone 11 Pro Max Parlak Kırmızı 128 GB",
+    createdDate: "2020-05-17",
   },
   {
     id: 1009,
@@ -88,6 +97,7 @@ const productsData = [
     discount: "8",
     color: "Siyah",
     description: "Apple Iphone 11 Pro Siyah 64 GB",
+    createdDate: "2020-05-18",
   },
   {
     id: 1010,
@@ -97,6 +107,7 @@ const productsData = [
     discount: "10",
     color: "Sarı",
     description: "Apple Iphone 12 Pro Max 128 GB Sarı",
+    createdDate: "2020-05-22",
   },
   {
     id: 1011,
@@ -106,6 +117,7 @@ const productsData = [
     discount: "5",
     color: "Beyaz",
     description: "Apple Iphone 11 Pro Max 64 GB Beyaz",
+    createdDate: "2020-05-28",
   },
   {
     id: 1012,
@@ -115,6 +127,7 @@ const productsData = [
     discount: "10",
     color: "Siyah",
     description: "Xiaomi Mi 11 Lite 5G 64 GB",
+    createdDate: "2020-06-20",
   },
   {
     id: 1013,
@@ -124,6 +137,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "Xiaomi Mi 11 Ultra 128 GB",
+    createdDate: "2020-07-10",
   },
   {
     id: 1014,
@@ -133,6 +147,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Xiaomi Mi 9 Pro 64 GB",
+    createdDate: "2020-07-18",
   },
   {
     id: 1015,
@@ -142,6 +157,7 @@ const productsData = [
     discount: "10",
     color: "Turuncu",
     description: "Xiaomi Mi 8 SE 5G 64 GB",
+    createdDate: "2020-08-25",
   },
   {
     id: 1016,
@@ -151,6 +167,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "Xiaomi Mi CC9 Ultra 128 GB",
+    createdDate: "2020-07-11",
   },
   {
     id: 1017,
@@ -160,6 +177,7 @@ const productsData = [
     discount: "0",
     color: "Pembe",
     description: "Xiaomi Mi 11 Lite 4G 64 GB",
+    createdDate: "2020-11-10",
   },
   {
     id: 1018,
@@ -169,6 +187,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Samsung Galaxy A7 (2017) 64 GB",
+    createdDate: "2021-01-11",
   },
   {
     id: 1019,
@@ -178,6 +197,7 @@ const productsData = [
     discount: "10",
     color: "Turuncu",
     description: "Samsung Galaxy C5 Pro 64 GB",
+    createdDate: "2021-02-15",
   },
   {
     id: 1020,
@@ -187,6 +207,7 @@ const productsData = [
     discount: "14",
     color: "Beyaz",
     description: "Samsung Galaxy C7 Pro 128 GB",
+    createdDate: "2021-03-22",
   },
   {
     id: 1021,
@@ -196,6 +217,7 @@ const productsData = [
     discount: "0",
     color: "Siyah",
     description: "Samsung Galaxy A8 (2016)  64 GB",
+    createdDate: "2021-04-15",
   },
   {
     id: 1022,
@@ -205,6 +227,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Huawei Mate 9 (2016) 64 GB",
+    createdDate: "2021-05-15",
   },
   {
     id: 1023,
@@ -214,6 +237,7 @@ const productsData = [
     discount: "10",
     color: "Turuncu",
     description: "Huawei Ascend Mate 2 (4G) (2014) 64 GB",
+    createdDate: "2020-06-16",
   },
   {
     id: 1024,
@@ -223,6 +247,7 @@ const productsData = [
     discount: "14",
     color: "Beyaz",
     description: "Huawei Ascend Mate 7 Pro 128 GB",
+    createdDate: "2021-06-20",
   },
   {
     id: 1025,
@@ -232,6 +257,7 @@ const productsData = [
     discount: "0",
     color: "Pembe",
     description: "Huawei Mate 20 X 5G (2019) 64 GB",
+    createdDate: "2020-03-20",
   },
   {
     id: 1026,
@@ -241,6 +267,7 @@ const productsData = [
     discount: "0",
     color: "Siyah",
     description: "Google Pixel 6 Pro 64 GB",
+    createdDate: "2021-05-19",
   },
   {
     id: 1027,
@@ -250,6 +277,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "Google Pixel 4a 5G 64 GB",
+    createdDate: "2021-06-20",
   },
   {
     id: 1028,
@@ -259,6 +287,7 @@ const productsData = [
     discount: "10",
     color: "Turuncu",
     description: "Google Pixel 6 Pro. 64 GB",
+    createdDate: "2021-07-20",
   },
   {
     id: 1029,
@@ -268,6 +297,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "Google Pixel 5 128 GB",
+    createdDate: "2021-08-19",
   },
   {
     id: 1030,
@@ -277,8 +307,8 @@ const productsData = [
     discount: "0",
     color: "Pembe",
     description: "Google Pixel 5a 5G 64 GB",
+    createdDate: "2021-07-12",
   },
-
   {
     id: 1031,
     brand: "BlackBerry",
@@ -287,6 +317,7 @@ const productsData = [
     discount: "0",
     color: "Siyah",
     description: "BlackBerry 9300 Curve Orginal 64 GB",
+    createdDate: "2021-07-23",
   },
   {
     id: 1032,
@@ -296,6 +327,7 @@ const productsData = [
     discount: "0",
     color: "Kırmızı",
     description: "BlackBerryBold 9700 64 GB",
+    createdDate: "2021-02-20",
   },
   {
     id: 1033,
@@ -305,6 +337,7 @@ const productsData = [
     discount: "10",
     color: "Turuncu",
     description: "BlackBerryQ20 Pro 64 GB",
+    createdDate: "2021-10-10",
   },
   {
     id: 1034,
@@ -314,6 +347,7 @@ const productsData = [
     discount: "14",
     color: "Sarı",
     description: "BlackBerry Q10 128 GB",
+    createdDate: "2021-06-14",
   },
   {
     id: 1035,
@@ -323,6 +357,7 @@ const productsData = [
     discount: "0",
     color: "Pembe",
     description: "BlackBerryCurve 8520 64 GB",
+    createdDate: "2020-05-24",
   },
 ];
 
