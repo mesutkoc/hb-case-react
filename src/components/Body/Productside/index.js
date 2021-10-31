@@ -1,7 +1,11 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentPage } from "redux/slices/Products/";
+import {
+  setCurrentPage,
+  setDefaultFilter,
+  setDefaultFiltersData,
+} from "redux/slices/Products/";
 import ProductComponent from "./ProductComponent";
 
 function Productside() {
@@ -20,9 +24,14 @@ function Productside() {
   } else if (userBrandFilter) {
     let colorFilter = product.filter((item) => item.brand === userBrandFilter);
     product = colorFilter;
+    dispatch(setDefaultFilter(product));
   } else if (userColorFilter) {
     let colorFilter = product.filter((item) => item.color === userColorFilter);
     product = colorFilter;
+    dispatch(setDefaultFiltersData(product));
+  } else {
+    dispatch(setDefaultFilter(product));
+    dispatch(setDefaultFiltersData(product));
   }
   const searchedProduct = useSelector((state) => state.products.searchedData);
   if (searchedProduct.length >= 2) {
@@ -31,7 +40,7 @@ function Productside() {
     );
     product = result;
   }
-  
+
   const currentPage = useSelector((state) => state.products.currentPage);
   const productPerPage = useSelector((state) => state.products.productPerPage);
   const indexOfLastProduct = currentPage * productPerPage;
@@ -39,27 +48,24 @@ function Productside() {
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastProduct);
   const renderProducts = currentProduct.map((product) => {
     return (
-      <ProductComponent
-        props={product}
-        key={product.id}
-      ></ProductComponent>
+      <ProductComponent props={product} key={product.id}></ProductComponent>
     );
   });
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(product.length / productPerPage); i++) {
     pageNumbers.push(i);
   }
-  const changePage = (data,id) => {
+  const changePage = (data, id) => {
     dispatch(setCurrentPage(data));
     id !== hover.index ? setHover({ index: id, hovers: true }) : setHover({});
   };
-  const renderPageNumbers = pageNumbers.map((number,index) => {
+  const renderPageNumbers = pageNumbers.map((number, index) => {
     return (
       <div
         className={`pageNumber ${hover.index === index && hover.hovers}`}
         key={number}
         id={number}
-        onClick={(e) => changePage(e.target.id,index)}
+        onClick={(e) => changePage(e.target.id, index)}
       >
         {number}
       </div>

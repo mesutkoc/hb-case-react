@@ -1,9 +1,5 @@
-import reducer, {
-  getFilters,
-  getColorFilters,
-  setProducts,
+import reducer, { getFilters, getColorFilters, setProducts } from "./index";
 
-} from "./index";
 
 describe("Test", () => {
   test("Return counts that is same brand", () => {
@@ -40,4 +36,5 @@ describe("Test", () => {
       { brand: "Samsung", color: "Siyah" },
     ]);
   });
+ 
 });

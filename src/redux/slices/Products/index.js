@@ -46,6 +46,14 @@ export const productSlice = createSlice({
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
+    setDefaultFilter: (state, action) => {
+      console.log("asd");
+      state.defaultColorsData = getColorFilters(action.payload);
+    },
+    setDefaultFiltersData: (state, action) => {
+      console.log("asd");
+      state.defaultFiltersData = getFilters(action.payload);
+    },
     setSearchedData: (state, action) => {
       state.searchedData = action.payload;
     },
@@ -71,5 +79,7 @@ export const {
   setProductsData,
   setUsersFilterList,
   setUsersBrandFilter,
+  setDefaultFilter,
+  setDefaultFiltersData,
 } = productSlice.actions;
 export default productSlice.reducer;
