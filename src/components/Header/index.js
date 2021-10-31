@@ -2,14 +2,14 @@ import React,{useState} from "react";
 import "./style.css"
 import Logo from "../../assets/hepsiburadalogo.png";
 import Searchicon from "../../assets/searchicon.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSearchedData } from "../../redux/slices/Products/index";
 import Basket from "../Basket";
 
 function Header() {
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
-  
+  const basketLength = useSelector(state => state.basket.userBasket);
   const searchProduct = (searchItem) => {
     dispatch(setSearchedData(searchItem.trim()));
   }
@@ -33,12 +33,9 @@ function Header() {
             onChange={(e) => searchProduct(e.target.value)}
           ></input>
         </div>
-        <div
-          className="basket"
-          onClick={() => seeBasket()}
-        >
+        <div className="basket" onClick={() => seeBasket()}>
           <button type="button" className="basketInput">
-            Sepetim <span className="basketCount">4</span>
+            Sepetim <span className="basketCount">{basketLength.length}</span>
           </button>
         </div>
         <Basket props={hover}></Basket>

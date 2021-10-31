@@ -47,11 +47,9 @@ export const productSlice = createSlice({
       state.currentPage = action.payload;
     },
     setDefaultFilter: (state, action) => {
-      console.log("asd");
       state.defaultColorsData = getColorFilters(action.payload);
     },
     setDefaultFiltersData: (state, action) => {
-      console.log("asd");
       state.defaultFiltersData = getFilters(action.payload);
     },
     setSearchedData: (state, action) => {
