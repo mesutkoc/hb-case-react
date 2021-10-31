@@ -10,6 +10,7 @@ import Image1 from "../../../assets/image1.png";
 
 function ProductComponent(item) {
   const dispatch = useDispatch();
+  const basketData = useSelector((state) => state.basket.userBasket);
   const [hover, setHover] = useState({ id: null, hovers: null });
   const calculateDiscount = (price, discount) => {
     const discountCash = (parseInt(price) * parseInt(discount)) / 100;
@@ -80,12 +81,26 @@ function ProductComponent(item) {
               hover.id === item.props.id && hover.hovers
             }`}
           >
-            <button
-              className="addButton"
-              onClick={() => addItemToBasket(item.props)}
-            >
-              Sepete Ekle
-            </button>
+            {basketData.length > 0 ? (
+              basketData.findIndex((product) => product.id === item.props.id) >=
+              0 ? (
+                <button className="cantAddButton">Bu ürünü sepete ekleyemezsiniz.</button>
+              ) : (
+                <button
+                  className="addButton"
+                  onClick={() => addItemToBasket(item.props)}
+                >
+                  Sepete Ekle
+                </button>
+              )
+            ) : (
+              <button
+                className="addButton"
+                onClick={() => addItemToBasket(item.props)}
+              >
+                Sepete Ekle
+              </button>
+            )}
           </div>
         </div>
       </div>

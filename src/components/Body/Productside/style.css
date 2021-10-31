@@ -107,6 +107,17 @@
   border-radius: 10px;
   border: none;
 }
+.item .cantAddButton{
+  background-color: #E5E5E5;
+  color:#484848;
+  font-size: 12px;
+  margin-left: 10px;
+  height: 35px;
+  width: 224px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
 .item .addButton:hover {
   cursor: pointer;
 }
@@ -168,6 +179,9 @@
     max-height: calc(var(--lh) * var(--max-lines));
   }
   .item .addButton {
+    width: 180px;
+  }
+  .item .cantAddButton {
     width: 180px;
   }
 }
