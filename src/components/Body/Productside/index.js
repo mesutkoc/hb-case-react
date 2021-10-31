@@ -7,11 +7,15 @@ import {
   setDefaultFiltersData,
 } from "redux/slices/Products/";
 import ProductComponent from "./ProductComponent";
+import { calculateDiscount } from "components/functions";
 
 function Productside() {
   const dispatch = useDispatch();
   let product = useSelector((state) => state.products.productsData);
+  let sortingFilter = useSelector((state) => state.products.usersSortingFilter);
   let userColorFilter = useSelector((state) => state.products.usersFilterList);
+  const currentPage = useSelector((state) => state.products.currentPage);
+  const productPerPage = useSelector((state) => state.products.productPerPage);
   const [hover, setHover] = useState({ index: null, hovers: null });
 
   let userBrandFilter = useSelector((state) => state.products.usersBrandFilter);
@@ -29,6 +33,37 @@ function Productside() {
     let colorFilter = product.filter((item) => item.color === userColorFilter);
     product = colorFilter;
     dispatch(setDefaultFiltersData(product));
+  } else if (sortingFilter) {
+    switch (sortingFilter) {
+      case "En Yüksek Fiyat":
+        product = [...product];
+        product.sort((a, b) =>
+          calculateDiscount(a.price, a.discount)[0] <
+          calculateDiscount(b.price, b.discount)[0]
+            ? 1
+            : -1
+        );
+        break;
+      case "En Düşük Fiyat":
+        product = [...product];
+        product.sort((a, b) =>
+          calculateDiscount(a.price, a.discount)[0] >
+          calculateDiscount(b.price, b.discount)[0]
+            ? 1
+            : -1
+        );
+        break;
+      case "En Yeniler A>Z":
+        product = [...product];
+        product.sort((a, b) => (a.createdDate < b.createdDate ? 1 : -1));
+        break;
+      case "En Yeniler Z>A":
+        product = [...product];
+        product.sort((a, b) => (a.createdDate > b.createdDate ? 1 : -1));
+        break;
+      default:
+        break;
+    }
   } else {
     dispatch(setDefaultFilter(product));
     dispatch(setDefaultFiltersData(product));
@@ -36,13 +71,11 @@ function Productside() {
   const searchedProduct = useSelector((state) => state.products.searchedData);
   if (searchedProduct.length >= 2) {
     const result = product.filter((item) =>
-      item.model.includes(searchedProduct)
+      item.model.toLowerCase().includes(searchedProduct)
     );
     product = result;
   }
 
-  const currentPage = useSelector((state) => state.products.currentPage);
-  const productPerPage = useSelector((state) => state.products.productPerPage);
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
   const currentProduct = product.slice(indexOfFirstProduct, indexOfLastProduct);

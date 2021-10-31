@@ -11,7 +11,6 @@ import Image1 from "../../../assets/image1.png";
 function ProductComponent(item) {
   const dispatch = useDispatch();
   const [hover, setHover] = useState({ id: null, hovers: null });
-  const userBasket = useSelector((state) => state.basket.userBasket);
   const calculateDiscount = (price, discount) => {
     const discountCash = (parseInt(price) * parseInt(discount)) / 100;
     const newPrice = price - discountCash;

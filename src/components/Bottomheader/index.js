@@ -1,12 +1,14 @@
 import "./style.css";
 import React, { useState } from "react";
-
+import { useSelector } from "react-redux";
 function HeaderBottom() {
-    const [hover, setHover] = useState(false);
-    const toggleSorting = (hover) => {
-      setHover(hover);
-    };
-  
+  const [hover, setHover] = useState(false);
+  const filterStatus = useSelector(
+    (state) => state.products.usersSortingFilter
+  );
+  const toggleSorting = (hover) => {
+    setHover(hover);
+  };
   return (
     <div className="headerBottomContainer">
       <div className="headerBottomElements">
@@ -22,38 +24,8 @@ function HeaderBottom() {
             className="sortingButton"
             onClick={() => toggleSorting(!hover)}
           >
-            Sıralama
-            <i className="vector">
-              <svg
-                width="11"
-                height="5"
-                viewBox="0 0 11 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.34375 0L5.34375 5L10.3438 0L0.34375 0Z"
-                  fill="#BDBDBD"
-                />
-              </svg>
-            </i>
+            {filterStatus === null ? "Sıralama" : filterStatus}
           </button>
-          {hover === true && (
-            <div className="sortingList">
-              <span className="listItem">
-                ✓<span className="listItem1">En Düşük Fiyat</span>
-              </span>
-              <span className="listItem">
-                ✓<span className="listItem1">En Yüksek Fiyat</span>
-              </span>
-              <span className="listItem">
-                ✓<span className="listItem1">En Yeniler (A{">"}Z)</span>
-              </span>
-              <span className="listItem">
-                ✓<span className="listItem1">En Yeniler (Z{">"}A)</span>
-              </span>
-            </div>
-          )}
         </div>
       </div>
     </div>

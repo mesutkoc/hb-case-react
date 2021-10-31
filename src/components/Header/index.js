@@ -11,7 +11,7 @@ function Header() {
   const dispatch = useDispatch();
   const basketLength = useSelector(state => state.basket.userBasket);
   const searchProduct = (searchItem) => {
-    dispatch(setSearchedData(searchItem.trim()));
+    dispatch(setSearchedData(searchItem.toLowerCase().trim()));
   }
   const seeBasket = () => {
     hover===false?setHover(true):setHover(false)

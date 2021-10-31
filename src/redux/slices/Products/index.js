@@ -25,7 +25,10 @@ export const getColorFilters = (data) => {
     return colorList;
   }
 };
-
+export const getSortingFilter = (data, type) => {
+  data = type;
+  return data;
+};
 export const productSlice = createSlice({
   name: "products",
   initialState: {
@@ -41,6 +44,7 @@ export const productSlice = createSlice({
     searchedData: "",
     usersFilterList: "",
     usersBrandFilter: "",
+    usersSortingFilter: null,
   },
   reducers: {
     setCurrentPage: (state, action) => {
@@ -69,6 +73,9 @@ export const productSlice = createSlice({
         state.usersBrandFilter = "";
       }
     },
+    setSortingFilter: (state, action) => {
+      state.usersSortingFilter = getSortingFilter(state.usersSortingFilter,action.payload);
+    }
   },
 });
 export const {
@@ -79,5 +86,6 @@ export const {
   setUsersBrandFilter,
   setDefaultFilter,
   setDefaultFiltersData,
+  setSortingFilter,
 } = productSlice.actions;
 export default productSlice.reducer;
